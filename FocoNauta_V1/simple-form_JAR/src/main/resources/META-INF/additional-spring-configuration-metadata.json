@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "spring.dataasource.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.dataasource.password'"
+  },
+  {
+    "name": "spring.datasource.drive-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.drive-class-name'"
+  }
+]}

@@ -1,0 +1,115 @@
+<html lang="pt-br" xmlns="http://www.thymeleaf.org">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link type='text/css' rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+	<title>Inserir Alunos</title>
+</head>
+
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="collapse navbar-collapse" id="textoNavbar">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" th:href="@{/}"> <i class="fa fa-home"></i> Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+							<i class="fa fa-user"></i> Alunos </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{inserirAlunos}"><i class='fa fa-graduation-cap'></i>
+								Cadastrar Aluno</a>
+							<a class="dropdown-item" th:href="@{listarAlunos}"><i class="fa fa-search"></i> Listar
+								ALunos</a>
+							<a class="dropdown-item" th:href="@{filtro-alunos}"><i class="fa fa-filter"></i> Filtrar
+								ALunos</a>
+						</div>
+			</div>
+			</li>
+			</ul>
+			<span class="navbar-text">
+				<div class="collapse navbar-collapse" id="textoNavbar">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i class='fafa-times'></i> Sair</a>
+						</li>
+					</ul>
+				</div>
+			</span>
+			</div>
+		</nav>
+	</header>
+
+	<h2>+ Inserir um novo Aluno</h2>
+	<form action="/inserirAlunos" th:object="${aluno}" method="POST" name="formulario">
+		<div class="form-group">
+			<div class=" col-md-6 offset-md-3">
+				<label>Nome</label>
+				<input type="text" name="nome" class="form-control " placeholder="Nome" th:field="*{nome}" required="">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-6 offset-md-3">
+				<label>Selecione o Curso</label>
+				<select class="form-control" th:field="*{curso}">
+					<option th:each="curso : ${T(com.projeto.senac.Enum.Curso).values()}" th:value="${curso}"
+						th:text="${curso}"> </option>
+				</select>
+			</div>
+		</div>
+		<!--
+<div class="form-group">
+	<div class="col-md-6 offset-md-3"> 
+		<label>Matrícula</label>
+		<input type="text" name="matricula" id="matricula" class="form-control" th:field="*{matricula}" required="">
+		<div style="margin-top: 1%;">
+			<button type="button" onclick="GeraMatricula()" class="btn btn-dark">Gerar</button>
+			</div>
+			</div>
+			 </div>-->
+		<div class="form-group">
+			<div class="col-md-6 offset-md-3">
+				<label>Selecione o Status</label>
+				<select class="form-control" th:field="*{status}">
+					<option th:each="status : ${T(com.projeto.senac.Enum.Status).values()}" th:value="${status}"
+						th:text="${status}">
+					</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-6 offset-md-3"> <label>Selecione o Turno</label>
+				<select class="form-control" th:field="*{turno}">
+					<option th:value="'M'" th:text="Matutino"></option>
+					<option th:value="'N'" th:text="Noturno"></option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-8 offset-md-5">
+				<input type="submit" value="Salvar" class="btn btn-primary" name="Salvar">
+			</div>
+		</div>
+	</form>
+
+	<footer class="bg-primary text-center text-lg-start">
+		<div>
+			<!-- Copyright -->
+			<div class="text-center p-3" style="color: #fff; font-weight: bold;"> © 2023
+				Copyright:
+				SENAC
+			</div>
+	</footer>
+	
+	<script src="js/main.js"></script>
+</body>
+
+</html>

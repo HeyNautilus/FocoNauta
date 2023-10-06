@@ -266,3 +266,11 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
+
+.alert{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(199, 104, 120);
+}

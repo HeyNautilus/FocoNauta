@@ -4,11 +4,8 @@
 
 	<meta name="viewport" content="width=width-device, initial-scale=1.0">
 
-		<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
 
 	<link rel="stylesheet" href="css/login.css">
-
-	<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
@@ -41,7 +38,7 @@
 		</div>
 		<!-- Logar-->
 		<div class="form-container sign-in-container">
-			<div class="alert alert-danger" role="alert" th:if="${msg}">
+			<div class="alert" role="alert" th:if="${msg}">
 				<strong th:text="${msg}"></strong>
 			</div>
 			<form method="post" action="login" th:object="${usuario}">
@@ -62,7 +59,7 @@
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-left">
-					<h1>Bem-vindo de volta!</h1>
+					<h1>Bem-vindo a bordo!</h1>
 					<p>Desafie sua mente e alcance as estrelas!</p>
 					<button class="ghost" id="signIn">Entrar</button>
 				</div>

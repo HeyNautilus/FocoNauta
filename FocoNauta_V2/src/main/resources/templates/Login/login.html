@@ -1,0 +1,80 @@
+<html lang="pt-br" xsi=schemaLocation="http://www.thymeleaf.org">
+
+<head>
+
+	<meta name="viewport" content="width=width-device, initial-scale=1.0">
+
+
+	<link rel="stylesheet" href="css/login.css">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+	<!------ Include the above in your HEAD tag ---------->
+
+	<title>Login Usuário</title>
+
+</head>
+
+<!-- Criar conta-->
+<body>
+	 <canvas id="lamp-anim" class="lamp-anim" width="100%" height="100%"></canvas>
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<div class="alert" role="alert" th:if="${msg}">
+				<strong th:text="${msg}"></strong>
+			</div>
+			<form method="post" action="salvarUsuario" th:object="${usuario}">
+				<h1>Criar Conta</h1>
+				
+				
+				<input type="email"  name="email" placeholder="Email" th:field="*{email}" />
+				<input type="text" name="login" placeholder="Nome" th:field="*{login}"/>
+				<input type="password" name="password" placeholder="Senha" th:field="*{senha}" />
+				<input type="password" name="password" placeholder="Confirme a senha" th:field="*{senha2}" />
+				<button type="submit">Cadastrar</button>
+			</form>
+		</div>
+		<!-- Logar-->
+		<div class="form-container sign-in-container">
+			<div class="alert" role="alert" th:if="${msg}">
+				<strong th:text="${msg}"></strong>
+			</div>
+			<form method="post" action="login" th:object="${usuario}">
+				<h1>Entrar</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>ou use sua conta</span>
+				<input type="email" name="email" placeholder="Email" th:field="*{email}" />
+				<input type="password" name="password" placeholder="Senha"  th:field="*{senha}"/>
+				<a th:href="@{recuperarSenha}">Esqueceu a senha?</a>
+				<button type="submit">Entrar</button>
+			</form>
+		</div>
+		
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Bem-vindo a bordo!</h1>
+					<p>Desafie sua mente e alcance as estrelas!</p>
+					<button class="ghost" id="signIn">Entrar</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Olá, tripulante!</h1>
+					<p>Crie sua conta e inicie uma jornada pelas estrelas!</p>
+					<button class="ghost" id="signUp">Cadastrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<script src="js/script.js"></script>
+	</footer>
+</body>
+
+</html>

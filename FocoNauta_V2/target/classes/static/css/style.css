@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+nav {
+
+	color: #fff;
+
+}
+
+a {
+
+	cursor: pointer;
+
+	font-weight: bold;
+
+}
+
+.neo-section {
+
+	min-height: 450px;
+
+	background-color: floralwhite;
+
+	width: 100%;
+
+	padding: 5%;
+
+	position: relative;
+
+}
+
+.Wm {
+
+	width: 50%;
+
+	float: left;
+
+}
+
+.neo-container {
+
+	max-width: 1200px;
+
+	padding: 2% 2%;
+
+}
+
+.center {
+
+	text-align: center;
+
+}
+
+.botoes {
+
+	padding: 2% 15%;
+
+}

@@ -1,0 +1,43 @@
+<html lang="pt-br" xsi=schemaLocation="http://www.thymeleaf.org">
+
+<head>
+
+	<meta name="viewport" content="width=width-device, initial-scale=1.0">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+	<link rel="stylesheet" href="css/login.css">
+
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!------ Include the above in your HEAD tag ---------->
+
+	<title>Atualizar Usuário</title>
+
+</head>
+
+<body class="recuperar">
+
+		<div class="container_senha">
+						<form id="cadastro-form" class="form" method="post" th:object="${usuario}"
+							action="atualizarUsuario">
+							<h3 class="text-center text-info">Recuperar Senha</h3>
+							<input type="hidden" name="login" th:value="${usuario.login}">
+							<div class="alert alert-danger" role="alert" th:if="${msg}">
+								<strong th:text="${msg}"></strong>
+							</div>
+
+								<input type="email" name="email" id="email" th:field="*{email}" placeholder="email" readonly>
+								<input type="password" name="senha" id="senha" th:field="*{senha}" placeholder="senha">
+								<input type="text" name="token" id="token" th:field="*{token}" placeholder="token">
+								<button type="submit" >Atualizar</button>
+
+								<a th:href="@{login}">Voltar</a>
+						</form>	
+	</div>
+
+</body>
+
+</html>
